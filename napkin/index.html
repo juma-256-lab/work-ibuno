@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibuno Design SMC Limited - Mpenzi Paper Studio | Design & Paper Solutions Kampala</title>
+<meta name="description" content="Ibuno Design SMC Limited - Mpenzi Paper Studio. Registered design firm in Kampala offering architectural illustrations, event designs, paper products & business solutions.">
+
+<style>
+  :root{
+    --primary:#1e3a8a;
+    --accent:#3b82f6;
+    --dark:#0f172a;
+    --light:#f8fafc;
+    --text:#334155;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:var(--light);color:var(--text);line-height:1.6}
+
+  /* Navigation */
+  nav{
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    transition:box-shadow 0.3s
+  }
+ .nav-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+  }
+ .nav-logo{height:100px;width:auto;background:white;padding:8px;border-radius:8px}
+ .nav-links{display:flex;gap:30px;list-style:none}
+ .nav-links a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:500;
+    transition:color 0.3s
+  }
+ .nav-links a:hover{color:var(--accent)}
+ .menu-toggle{display:none;cursor:pointer;font-size:24px}
+
+  /* Hero Section */
+ .hero{
+    background:linear-gradient(rgba(30,58,138,0.85), rgba(59,130,246,0.85)), url('images/image4.jpeg') center/cover;
+    color:white;
+    text-align:center;
+    padding:100px 20px
+  }
+ .hero h1{font-size:48px;margin-bottom:15px}
+ .hero p{font-size:20px;margin-bottom:25px;max-width:700px;margin-left:auto;margin-right:auto}
+ .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:white;
+    padding:14px 30px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    transition:background 0.3s;
+    border:none;
+    cursor:pointer;
+    font-size:16px
+  }
+ .btn:hover{background:var(--primary)}
+
+  /* Sections */
+  section{padding:70px 20px}
+ .container{max-width:1200px;margin:0 auto}
+  h2{
+    text-align:center;
+    font-size:36px;
+    color:var(--primary);
+    margin-bottom:15px
+  }
+ .section-subtitle{
+    text-align:center;
+    color:#64748b;
+    margin-bottom:50px;
+    font-size:18px
+  }
+
+  /* About */
+ .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+ .about-text h3{color:var(--primary);margin-bottom:15px;font-size:24px}
+ .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:20px}
+ .info-item{background:#eff6ff;padding:15px;border-radius:8px;border-left:4px solid var(--accent)}
+ .info-item b{color:var(--primary)}
+
+  /* Services */
+ .services{background:#e2e8f0}
+ .services-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:25px}
+ .service-card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    transition:transform 0.3s
+  }
+ .service-card:hover{transform:translateY(-8px)}
+ .service-icon{font-size:40px;margin-bottom:15px}
+ .service-card h3{color:var(--primary);margin-bottom:10px}
+
+  /* Portfolio */
+ .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:20px
+  }
+ .gallery-item{
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    cursor:pointer
+  }
+ .gallery-item img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    transition:transform 0.4s
+  }
+ .gallery-item:hover img{transform:scale(1.08)}
+ .gallery-overlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.85));
+    color:white;
+    padding:20px
+  }
+ .gallery-overlay h4{margin-bottom:5px}
+
+  /* Contact */
+ .contact{background:var(--dark);color:white}
+ .contact h2{color:white}
+ .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px}
+ .contact-info h3{margin-bottom:15px;color:var(--accent)}
+ .contact-item{margin-bottom:18px;display:flex;gap:12px;align-items:flex-start}
+ .contact-item a{color:var(--accent);text-decoration:none}
+ .contact-item a:hover{text-decoration:underline}
+ .contact-form input,.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:6px;
+    font-family:inherit;
+    font-size:15px
+  }
+ .contact-form button{width:100%}
+
+  /* Footer */
+  footer{
+    background:#020617;
+    color:#94a3b8;
+    text-align:center;
+    padding:25px 20px;
+    font-size:14px
+  }
+
+  /* Mobile */
+  @media(max-width:768px){
+   .nav-links{
+      position:absolute;
+      top:70px;
+      left:0;
+      right:0;
+      background:white;
+      flex-direction:column;
+      padding:20px;
+      gap:15px;
+      display:none;
+      box-shadow:0 5px 10px rgba(0,0,0,0.1)
+    }
+   .nav-links.active{display:flex}
+   .menu-toggle{display:block}
+   .hero h1{font-size:32px}
+   .hero p{font-size:16px}
+   .about-grid,.contact-grid{grid-template-columns:1fr}
+    h2{font-size:28px}
+  }
+  @media(max-width:768px){
+    .nav-logo{height: 45px;padding: 4px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <img src="images/logo.jpg.JPG" alt="Ibuno Logo" class="nav-logo">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <h1>Ibuno Design SMC Limited</h1>
+  <p>Mpenzi Paper Studio - Creative Design, Architectural Illustrations & Paper Solutions in Kampala</p>
+  <a href="#contact" class="btn">Get In Touch</a>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+    <h2>About Us</h2>
+    <p class="section-subtitle">A legally registered design firm committed to innovation and quality</p>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Who We Are</h3>
+        <p><b>Ibuno Design SMC Limited - Mpenzi Paper Studio</b> is a legally registered corporate entity in Uganda. We are recorded among employers with unallocated contributions at the National Social Security Fund (NSSF) Uganda, confirming compliance with national labor and social security regulations.</p>
+        <br>
+        <p>We operate physically at 250A Waligo Road, Kampala. Our work spans architectural illustrations, custom event designs, paper products, and business process solutions.</p>
+
+        <div class="info-grid">
+          <div class="info-item"><b>Location:</b> 250A Waligo Road, Kampala</div>
+          <div class="info-item"><b>Brand:</b> Mpenzi Paper Studio</div>
+          <div class="info-item"><b>NSSF:</b> Registered Employer</div>
+          <div class="info-item"><b>Focus:</b> Design + Innovation</div>
+        </div>
+      </div>
+      <div>
+        <img src="images/image2.jpeg.JPG" alt="Custom Illustration" style="width:100%;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.1)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="section-subtitle">Professional design and administrative solutions</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✏️</div>
+        <h3>Architectural Illustrations</h3>
+        <p>Detailed hand-drawn and digital illustrations of buildings, homes, churches, and commercial properties. Custom pieces for events like Kwanjula and weddings.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Event Design & Stationery</h3>
+        <p>Custom seating charts, table plans, invitations, and paper products for weddings, corporate functions, and "Farm to Table" events.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Business Solutions</h3>
+        <p>Innovation support, administrative coordination, data management, research, documentation, and technology-enabled business solutions.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📄</div>
+        <h3>Paper Products</h3>
+        <p>High-quality paper-based products, gift packaging, cards, and custom printed materials for corporate and personal use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio">
+  <div class="container">
+    <h2>Our Portfolio</h2>
+    <p class="section-subtitle">Selected work from Mpenzi Paper Studio - Click any image to enlarge</p>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="images/image1.jpeg.JPG" alt="Architectural Illustration">
+        <div class="gallery-overlay">
+          <h4>Architectural Illustration</h4>
+          <p>Custom church design by Mpenzi Paper Studio</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/image4.jpeg.JPG" alt="House Illustration">
+        <div class="gallery-overlay">
+          <h4>Custom Home Art</h4>
+          <p>"There's No Place Like Home" - Rina's Kwanjula 09.12.2023</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/image2.jpeg.JPG" alt="Seating Chart">
+        <div class="gallery-overlay">
+          <h4>Event Seating Design</h4>
+          <p>"Farm to Table Dining" - Custom seating chart</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/image3.jpeg.JPG" alt="Office Display">
+        <div class="gallery-overlay">
+          <h4>Office Display</h4>
+          <p>In-house showcase of illustrations and paper products</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p class="section-subtitle" style="color:#cbd5e1">Let's discuss your next design project</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+
+        <div class="contact-item">
+          <span>📍</span>
+          <div>
+            <b>Address:</b><br>
+            250A Waligo Road, Kampala, Uganda
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>👤</span>
+          <div>
+            <b>Mr. Nseroko Vincent</b><br>
+            Business Development & Operations Lead
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>📞</span>
+          <div>
+            <b>Phone/WhatsApp:</b><br>
+            <a href="tel:+256772830142">0772 830 142</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>📧</span>
+          <div>
+            <b>Email:</b><br>
+            <a href="mailto:ibuno.design@gmail.com">ibuno.design@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>📸</span>
+          <div>
+            <b>Instagram:</b><br>
+            <a href="https://www.instagram.com/weareteesa/reels/" target="_blank">@weareteesa</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>🏢</span>
+          <div>
+            <b>Company:</b><br>
+            Ibuno Design SMC Limited<br>
+            Trading as Mpenzi Paper Studio
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject">
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 Ibuno Design SMC Limited - Mpenzi Paper Studio. All Rights Reserved.<br>
+  A legally registered corporate entity in Uganda | NSSF Compliant
+</footer>
+
+<script>
+// Company Contact Details
+const companyContact = {
+  name: "Mr. Nseroko Vincent",
+  phone: "0772 830 142",
+  phoneIntl: "+256772830142",
+  email: "ibuno.design@gmail.com",
+  instagram: "https://www.instagram.com/weareteesa/reels/",
+  address: "250A Waligo Road, Kampala, Uganda"
+};
+
+// 1. Mobile Menu Toggle
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('active');
+}
+
+// 2. Contact Form Submission
+function sendMessage(e){
+  e.preventDefault();
+  const form = e.target;
+  const name = form.querySelector('input[type="text"]').value;
+  const email = form.querySelector('input[type="email"]').value;
+
+  alert(`Thank you ${name}! ✅\n\nYour message has been received.\n\nContact us directly:\n📞 ${companyContact.phone}\n📧 ${companyContact.email}\n📸 @weareteesa\nWe will reply to ${email} soon.`);
+  form.reset();
+}
+
+// 3. Portfolio Lightbox - Click to enlarge
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.addEventListener('click', function(){
+    const lightbox = document.createElement('div');
+    lightbox.style.cssText = `
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.9); display:flex; align-items:center;
+      justify-content:center; z-index:9999; cursor:pointer; padding:20px
+    `;
+
+    const bigImg = document.createElement('img');
+    bigImg.src = this.src;
+    bigImg.style.cssText = 'max-width:90%; max-height:85%; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.5)';
+
+    const caption = document.createElement('div');
+    caption.textContent = this.nextElementSibling.querySelector('p').textContent;
+    caption.style.cssText = 'position:absolute; bottom:30px; color:white; text-align:center; font-size:16px; max-width:80%';
+
+    lightbox.appendChild(bigImg);
+    lightbox.appendChild(caption);
+    document.body.appendChild(lightbox);
+    lightbox.addEventListener('click', () => lightbox.remove());
+  });
+});
+
+// 4. Active Nav Link on Scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if(scrollY >= sectionTop - 100){
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.style.color = '';
+    link.style.fontWeight = '500';
+    if(link.getAttribute('href') === '#' + current){
+      link.style.color = 'var(--accent)';
+      link.style.fontWeight = '600';
+    }
+  });
+});
+
+// 5. Navbar Shadow on Scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.boxShadow = window.scrollY > 50
+   ? '0 4px 20px rgba(0,0,0,0.12)'
+    : '0 2px 10px rgba(0,0,0,0.08)';
+});
+
+// 6. Floating WhatsApp Button
+document.addEventListener('DOMContentLoaded', () => {
+  const whatsappBtn = document.createElement('a');
+  whatsappBtn.href = `https://wa.me/${companyContact.phoneIntl.replace('+','')}?text=Hello Mr. Nseroko, I found your website and would like to inquire about design services.`;
+  whatsappBtn.target = '_blank';
+  whatsappBtn.innerHTML = '💬';
+  whatsappBtn.title = 'Chat on WhatsApp';
+  whatsappBtn.style.cssText = `
+    position:fixed; bottom:25px; right:25px; width:60px; height:60px;
+    background:#25D366; color:white; border-radius:50%; display:flex;
+    align-items:center; justify-content:center; font-size:30px;
+    text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    z-index:999; transition:transform 0.3s
+  `;
+  whatsappBtn.onmouseover = () => whatsappBtn.style.transform = 'scale(1.1)';
+  whatsappBtn.onmouseout = () => whatsappBtn.style.transform = 'scale(1)';
+  document.body.appendChild(whatsappBtn);
+});
+
+// 7. Fade-in Animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.1});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.service-card,.gallery-item,.info-item');
+  animatedElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Auto year update
+  const year = new Date().getFullYear();
+  document.querySelector('footer').innerHTML = document.querySelector('footer').innerHTML.replace('2026', year);
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>
